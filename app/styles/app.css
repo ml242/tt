@@ -1,0 +1,14 @@
+body {
+	background-color: rgb(0, 121, 191);
+}
+.columnItem {
+	border-radius: .5em;
+	border: 1px solid grey;
+}
+.js-menu-open {
+	float: right;
+	padding-right: 1em;
+}
+.padding-left {
+	padding-left: 1em;
+}
