@@ -26,7 +26,7 @@ export default Ember.Component.extend({
         	this.set(name, this.childViews[0].value);
         },
         newColumn(){
-            debugger;
+            alert()
         }
   }
 });
