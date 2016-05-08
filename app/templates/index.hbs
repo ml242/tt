@@ -1,5 +1,9 @@
+
+
   {{partial "partials/nav"}}
 
+	{{outlet}}
+	
 	{{#each model as |columnUnit|}}
 		{{column-list column=columnUnit}}
 	{{/each}}
