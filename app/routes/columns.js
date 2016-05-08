@@ -3,6 +3,11 @@ import Ember from 'ember';
 
 
 export default Ember.Route.extend({
-	model(){
-	}
+	model() {
+		const store = this.get('store');
+		return store
+	},
+
+   store: Ember.inject.service('store')
+
 });
