@@ -5,7 +5,7 @@ export default function() {
         type: 'columns',
         id: 1,
         attributes: {
-          name: 'DEV',
+          name: 'Development Issues',
           description: 'list of things to do on dev server',
           isArchived: false
         }

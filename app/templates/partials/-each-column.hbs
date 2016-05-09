@@ -1,31 +1,50 @@
-	<div class="row">
-		<div class="col-md-3 col-sm-12">
-			<section class="columnItem padding-left">
-				{{#if isEditing}}
-			    <form {{action "newTitle" this on="submit"}}>
-					
-						{{input type="text" value=column.name}}
-						<button class="btn btn-default" type="submit">submit</button>
-						
-			    </form>
-			    {{else}}
-				<h2 {{action "toggleEditing"}}>{{column.name}} <span class="js-menu-open" {{action "getMenu" bubbles=false}}>{{#if menuOpen}} {{partial "partials/column-menu"}} 
-					{{else}}...{{/if}}</span></h2>
-				{{/if}}
+<li class="columnItem">
+	
+	{{#if isEditingTitle}}
+    <form {{action "newTitle" this on="submit"}}>
+			{{input type="text" value=column.name}}
+			<button class="btn btn-default" type="submit">submit</button>
+    </form>
+  {{else}}
+	
+	<h4 {{action "toggleEditing"}}>{{column.name}} <span class="js-menu-open-button" {{action "getMenu" bubbles=false}}>
+		{{#if menuOpen}} {{partial "partials/column-menu"}} {{else}}...{{/if}}</span>
+	</h4>
+	
+	{{/if}}
 
-				<p>Created By: {{column.id}}</p>
-				<p>Description: {{column.description}}</p>
-				
-				{{#if isAdding}}
-					{{#bs-form-group}}
-						Placeholder form
-					{{/bs-form-group}}		
-					<button class="btn btn-default" {{action "insertCard"}}>Submit</button>
-					<button class="btn btn-default" {{action "cancelCard"}}>Cancel</button>
-					{{else}}	
-					<button class="btn btn-default" {{action "addCard"}}>Add a Card</button>
-				{{/if}}
+	<div class="column-body">
+		
+		<p>Created By: "Tiny User"</p>
+
+		{{#if isEditingDescription}}
+  		<form {{action "newDescription" this on="submit"}}>
+				{{input type="text" value=column.description}}
+				<button class="btn btn-default" type="submit">submit</button>
+    	</form>
+  	{{else}}
+			<p {{action "toggleEditingDescription"}}>Description: {{column.description}}</p>
+		{{/if}}
+
+		{{partial "partials/column-cards"}}
+
+		
+		{{#if isAdding}}
 			
-			</section>
-		</div>
+			{{!-- even this form should live in a card --}}
+			{{#bs-form-group action "newCard" this on="submit"}}
+				<textarea class="form-control" rows="3" placeholder="placeholder text"></textarea>
+				<div>
+					<button class="btn btn-default" type="submit">submit</button>
+					<button class="btn btn-default" {{action "cancelCard"}}>Cancel</button>
+				</div>
+			{{/bs-form-group}}	
+			{{else}}
+			<div>	
+				<button class="btn btn-default" {{action "addCard"}}>Add a Card</button>
+			</div>
+		{{/if}}
+
 	</div>
+</li>
+

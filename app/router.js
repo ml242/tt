@@ -7,7 +7,12 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('columns', function() {
-    this.route('new');
+  });
+});
+
+Router.map(function() {
+  this.route('columns', function() {
+  	this.route('card', { path: '/:card_id' });
   });
 });
 

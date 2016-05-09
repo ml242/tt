@@ -2,7 +2,8 @@ import Ember from 'ember';
 
 export default Ember.Component.extend({
 	isAdding: false,
-	isEditing: false,
+	isEditingTitle: false,
+    isEditingDescription: false,
 	menuOpen: false,
 	actions: {
         addCard() {
@@ -12,21 +13,25 @@ export default Ember.Component.extend({
         	this.set('isAdding', false);
         },
         toggleEditing() {
-          this.toggleProperty('isEditing');
+          this.toggleProperty('isEditingTitle');
+        },
+        toggleEditingDescription() {
+          this.toggleProperty('isEditingDescription');
         },
         getMenu() {
         	this.toggleProperty('menuOpen');
         },
         hideColumn() {
         	this.column.set('isArchived', true)
-    		},
+		},
         newTitle() {
         	// would like to abstract this to edit each form field, not sure how
-        	this.toggleProperty('isEditing');
-        	this.set(name, this.childViews[0].value);
+        	this.toggleProperty('isEditingTitle');
+        	// this.set(name, this.childViews[0].value);
         },
-        newColumn(){
-            alert()
+        newDescription() {
+            this.toggleProperty('isEditingDescription');
+            // this.set(description, this.childViews[0].value);
         }
   }
 });
