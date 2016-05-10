@@ -7,6 +7,7 @@ export default function() {
         attributes: {
           name: 'Development Issues',
           description: 'list of things to do on dev server',
+          cards: [],
           isArchived: false
         }
       }]

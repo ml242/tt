@@ -3,7 +3,7 @@ import Ember from 'ember';
 export default Ember.Component.extend({
 	isAdding: false,
 	isEditingTitle: false,
-    isEditingDescription: false,
+  isEditingDescription: false,
 	menuOpen: false,
 	actions: {
         addCard() {
@@ -32,6 +32,21 @@ export default Ember.Component.extend({
         newDescription() {
             this.toggleProperty('isEditingDescription');
             // this.set(description, this.childViews[0].value);
+        },
+        
+        newCard(){     
+            
+        // change the context to card here with a call?
+          debugger;
+
+          let parent = this.column.id;
+          let description = this.newCardText;
+
+          this.store.createRecord('card', {description: description, parent_id: id});
+        
+          debugger;
+          this.newCardText = '';
         }
-  }
+
+    }
 });

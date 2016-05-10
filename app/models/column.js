@@ -5,5 +5,5 @@ export default Model.extend({
   name: attr('string'),
   isArchived: attr('boolean'),
   description: attr('string'),
-  cards: attr('array')
+  cards: attr()
 });

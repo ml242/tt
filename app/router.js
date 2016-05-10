@@ -12,7 +12,7 @@ Router.map(function() {
 
 Router.map(function() {
   this.route('columns', function() {
-  	this.route('card', { path: '/:card_id' });
+  	this.route('card', { path: 'columns/:card_id' });
   });
 });
 

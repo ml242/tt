@@ -1,6 +1,7 @@
 <li class="columnItem">
 	
 	{{#if isEditingTitle}}
+    
     <form {{action "newTitle" this on="submit"}}>
 			{{input type="text" value=column.name}}
 			<button class="btn btn-default" type="submit">submit</button>
@@ -18,10 +19,12 @@
 		<p>Created By: "Tiny User"</p>
 
 		{{#if isEditingDescription}}
+  		
   		<form {{action "newDescription" this on="submit"}}>
 				{{input type="text" value=column.description}}
 				<button class="btn btn-default" type="submit">submit</button>
     	</form>
+
   	{{else}}
 			<p {{action "toggleEditingDescription"}}>Description: {{column.description}}</p>
 		{{/if}}
@@ -32,13 +35,13 @@
 		{{#if isAdding}}
 			
 			{{!-- even this form should live in a card --}}
-			{{#bs-form-group action "newCard" this on="submit"}}
-				<textarea class="form-control" rows="3" placeholder="placeholder text"></textarea>
+			<form>
+				{{textarea class="form-control" rows="3" placeholder="placeholder text" value=newCardText}}
 				<div>
-					<button class="btn btn-default" type="submit">submit</button>
+					<button class="btn btn-default"  {{action "newCard" preventDefault=true}} type="submit">submit</button>
 					<button class="btn btn-default" {{action "cancelCard"}}>Cancel</button>
 				</div>
-			{{/bs-form-group}}	
+			</form>
 			{{else}}
 			<div>	
 				<button class="btn btn-default" {{action "addCard"}}>Add a Card</button>
