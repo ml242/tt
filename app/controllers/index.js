@@ -2,34 +2,16 @@ import Ember from 'ember';
 
 export default Ember.Controller.extend({
   actions: {
-<<<<<<< HEAD
-    addColumn(){
-      
-      var name = $('input').val();
 
-      debugger;
-      
-      var column = this.store.createRecord('column', {
-  			title: name
-			});
-
-			column.save(); 
-
-    
-    }
-  }
-}); 
-=======
     newColumn(){
-      debugger;
-
-      var newColumn = $('input').val()
-
-      this.store.createRecord('column', {name: newColumn});
-
+      var newColumn = $('input').val();
+      var id = Math.floor( Math.random() * 10000000 );
+      this.store.createRecord('column', {name: newColumn, id: id});
       $('input').val('')
-
+    },
+    newCard(){
+    	alert();
     }
   }
 });
->>>>>>> oldmess
+
