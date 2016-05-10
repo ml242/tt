@@ -1,53 +1,25 @@
-# Tiny-trello
+# TinyTrello
 
-This README outlines the details of collaborating on this Ember application.
-A short introduction of this app could easily go here.
+## deploy with `ember s`
 
-## Prerequisites
+##Tasks completed
 
-You will need the following things properly installed on your computer.
+* <del>User can create a column on the board</del>
+* <del>User can archive a task when it's finished</del>
+* User can change the description/title of column
 
-* [Git](http://git-scm.com/)
-* [Node.js](http://nodejs.org/) (with NPM)
-* [Bower](http://bower.io/)
-* [Ember CLI](http://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+##Unfinished
+* User can add a card to the column
+* User can tag members
+* Only registered users can create cards/columns
+* Create tests for routes and cards
+* Site should be responsive
 
-## Installation
+##Challenges Faced
+* Ember was not easy for me to configure, hence the current state of the application. The features it gives you seem limitless, but there are strong opinions about where to place files and how to wrap objects. This created a steep learning curve for me.
 
-* `git clone <repository-url>` this repository
-* change into the new directory
-* `npm install`
-* `bower install`
+* My approach to this project started by modeling my schema and drawing sketches of the dataTypes that would compose TinyTrello.
 
-## Running / Development
+* After reading the guides, doing the two Official Tutorials, I thought I could give it a spin but it didn't work well. I am not able to create records in my Component although I can from the index.js in the Controller. So there is simply a configuration issue that I seem to be stuck on.
 
-* `ember server`
-* Visit your app at [http://localhost:4200](http://localhost:4200).
-
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
-
-### Building
-
-* `ember build` (development)
-* `ember build --environment production` (production)
-
-### Deploying
-
-Specify what it takes to deploy your app.
-
-## Further Reading / Useful Links
-
-* [ember.js](http://emberjs.com/)
-* [ember-cli](http://ember-cli.com/)
-* Development Browser Extensions
-  * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
-
+I am looking forward to working with Ember some more to see what is possible when one is more acclimated to the framework.
