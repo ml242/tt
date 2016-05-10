@@ -1,13 +1,9 @@
 import Ember from 'ember';
 
-
-
 export default Ember.Route.extend({
-
-	model() {
-		return [];
+	model(){
+		const store = this.get('columns');
+		return store
 	},
-
-   store: Ember.inject.service('store')
-
+	store: Ember.inject.service('store')
 });

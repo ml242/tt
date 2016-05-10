@@ -1,10 +1,13 @@
+{{partial "partials/nav"}}
 
-
-  {{partial "partials/nav"}}
-
-	{{outlet}}
+<div class="board-container">
 	
-	{{#each model as |columnUnit|}}
-		{{column-list column=columnUnit}}
-	{{/each}}
+	<ul class="list-inline columns-list">
 
+		{{#each model as |columnUnit|}}
+			{{column-list column=columnUnit}}
+		{{/each}}
+
+	</ul>
+
+</div>

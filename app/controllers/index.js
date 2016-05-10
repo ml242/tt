@@ -4,6 +4,7 @@ export default Ember.Controller.extend({
   actions: {
 
     newColumn(){
+      
       var newColumn = $('input').val();
       var id = Math.floor( Math.random() * 10000000 );
       this.store.createRecord('column', {name: newColumn, id: id});

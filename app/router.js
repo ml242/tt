@@ -6,8 +6,14 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  // this.route('index', { path: '/' });
-	this.route('columns', {path: '/' });
+  this.route('columns', function() {
+  });
+});
+
+Router.map(function() {
+  this.route('columns', function() {
+  	this.route('card', { path: 'columns/:card_id' });
+  });
 });
 
 export default Router;
