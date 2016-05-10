@@ -37,13 +37,16 @@ export default Ember.Component.extend({
         newCard(){     
             
         // change the context to card here with a call?
+          debugger;
 
           let parent = this.column.id;
           let description = this.newCardText;
 
           this.store.createRecord('card', {description: description, parent_id: id});
         
+          debugger;
           this.newCardText = '';
         }
+
     }
 });
